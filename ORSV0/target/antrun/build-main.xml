@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <echo message="Removing old deployment from Tomcat..." />
+    <delete dir="/Users/apurvaraut/Downloads/Tomcat/apache-tomcat-11.0.22/webapps/ORSV0" />
+    <delete file="/Users/apurvaraut/Downloads/Tomcat/apache-tomcat-11.0.22/webapps/ORSV0.war" />
+    <echo message="Copying ORSV0.war to /Users/apurvaraut/Downloads/Tomcat/apache-tomcat-11.0.22/webapps/" />
+    <copy file="/Users/apurvaraut/Desktop/ProjectWorkspace/ORSV0/target/ORSV0.war" todir="/Users/apurvaraut/Downloads/Tomcat/apache-tomcat-11.0.22/webapps" />
+    <echo message="Deployment complete." />
+  </target>
+</project>
