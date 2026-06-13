@@ -41,6 +41,9 @@ public interface ORSView {
 	public String MY_PROFILE_VIEW = PAGE_FOLDER + "/MyProfileView.jsp";
 	public String FORGET_PASSWORD_VIEW = PAGE_FOLDER + "/ForgetPasswordView.jsp";
 	public String MARKSHEET_MERIT_LIST_VIEW = PAGE_FOLDER + "/MarksheetMeritListView.jsp";
+	
+	public String PRODUCT_VIEW = PAGE_FOLDER + "/ProductView.jsp";
+	public String PRODUCT_LIST_VIEW = PAGE_FOLDER + "/ProductListView.jsp";
 
 	public String ERROR_CTL = "/ctl/MarksheetCtl";
 
@@ -90,5 +93,8 @@ public interface ORSView {
 	public String SUBJECT_REPORT_VIEW = "/reports/SubjectListReport.jrxml";
 	public String MARKSHEET_REPORT_VIEW = "/reports/MarksheetListReport.jrxml";
 	public String FACULTY_REPORT_VIEW = "/reports/FacultyListReport.jrxml";
+
+	public String PRODUCT_CTL = APP_CONTEXT + "/ctl/ProductCtl";
+	public String PRODUCT_LIST_CTL = APP_CONTEXT + "/ctl/ProductListCtl";
 
 }
