@@ -218,7 +218,20 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.ROLE_LIST_CTL%>"> <i
 								class="bi bi-shield-fill-check me-2 text-primary"></i> Role List
 						</a></li>
+					</ul></li>	
 						
+					
+				<!-- UseCase -->
+					
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle px-3 py-3" href="#"
+					data-bs-toggle="dropdown" aria-expanded="false"> <i
+						class="bi bi-people me-1"></i> Use Case
+					</a>
+					<ul
+						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
+						style="min-width: 210px; background: #1a2e4a;">
+					
 						<!-- Product -->
 						<li>
 							<h6 class="dropdown-header text-uppercase text-info small">
@@ -232,7 +245,26 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.PRODUCT_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Product List
 						</a></li>
+						
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<!-- Server -->
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Server
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.SERVER_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Server
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.SERVER_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Server List
+						</a></li>
 					</ul></li>
+					
+					
+					
 
 				<!-- ---- Reports (Admin only) ---- -->
 				<li class="nav-item dropdown"><a
@@ -306,8 +338,12 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-file-earmark-pdf me-2 text-warning"></i> Marksheet
 								List
 						</a></li>
+						
+						
 
 					</ul></li>
+					
+					
 				<%
 				}
 				%>
