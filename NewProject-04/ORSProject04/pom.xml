@@ -13,7 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		<tomcat.home>C:\Users\Dell\Downloads\apache-tomcat-11.0.22</tomcat.home>
+		<tomcat.home>/Users/apurvaraut/Downloads/Tomcat/apache-tomcat-11.0.22</tomcat.home>
 	</properties>
 
 	<!-- ===== Dependencies ===== -->

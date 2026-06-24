@@ -264,7 +264,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			rs.close();
 		} catch (Exception e) {
 			log.error("Database Exception..", e);
-			throw new ApplicationException("Exception : Exception in search Student");
+			throw new ApplicationException("Exception : Exception in search ");
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}

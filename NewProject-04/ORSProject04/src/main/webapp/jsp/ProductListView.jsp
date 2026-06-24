@@ -43,14 +43,13 @@ String _err = ServletUtility.getErrorMessage(request);
 
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
+				
 				<input type="text" name="productName"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by ProductName"
 					value="<%=ServletUtility.getParameter("productName", request)%>">
-				<input type="text" name="productName"
-					class="form-control form-control-sm" style="max-width: 220px;"
-					placeholder="Search by ProductName"
-					value="<%=ServletUtility.getParameter("productName", request)%>">
+				
+					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
 					<i class="bi bi-search me-1"></i> Search

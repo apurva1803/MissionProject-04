@@ -45,6 +45,7 @@ public class ProductCtl extends BaseCtl<ProductBean, ProductModel>{
 
 		ProductBean bean = new ProductBean();
 
+		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setProductName(DataUtility.getString(request.getParameter("productName")));
 		bean.setProductCategory(DataUtility.getString(request.getParameter("productCategory")));
 		bean.setOrderDate(DataUtility.getDate(request.getParameter("orderDate")));
@@ -63,7 +64,7 @@ public class ProductCtl extends BaseCtl<ProductBean, ProductModel>{
 	@Override
 	protected String getView(String op) {
 		if (OP_CANCEL.equalsIgnoreCase(op)) {
-			return ORSView.PRODUCT_CTL;
+			return ORSView.PRODUCT_LIST_CTL;
 		}
 		return ORSView.PRODUCT_VIEW;
 	}

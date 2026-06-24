@@ -45,14 +45,12 @@ String _err = ServletUtility.getErrorMessage(request);
 			%>
 
 			<form action="<%=ORSView.PRODUCT_CTL%>" method="POST">
-				<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
-					type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
-				<input type="hidden" name="modifiedBy"
-					value="<%=bean.getModifiedBy()%>"> <input type="hidden"
-					name="createdDatetime"
-					value="<%=DataUtility.getTimestamp(bean.getCreatedDatetime())%>">
-				<input type="hidden" name="modifiedDatetime"
-					value="<%=DataUtility.getTimestamp(bean.getModifiedDatetime())%>">
+			
+				<input type="hidden" name="id" value="<%=bean.getId()%>"> 
+				<input type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
+				<input type="hidden" name="modifiedBy" value="<%=bean.getModifiedBy()%>"> 
+				<input type="hidden" name="createdDatetime" value="<%=DataUtility.getTimestamp(bean.getCreatedDatetime())%>">
+				<input type="hidden" name="modifiedDatetime" value="<%=DataUtility.getTimestamp(bean.getModifiedDatetime())%>">
 
 				<div class="mb-3">
 					<label class="form-label fw-semibold">Product Name <span
@@ -75,7 +73,7 @@ String _err = ServletUtility.getErrorMessage(request);
 						class="text-danger">*</span></label> <input type="text" name="orderDate"
 						id="udate" readonly="readonly" class="form-control"
 						maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getOrderDate())%>">
+						value="<%=DataUtility.getDateString(bean.getOrderDate())%>">
 					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("orderDate", request)%></div>
 				</div>
 
@@ -92,7 +90,29 @@ String _err = ServletUtility.getErrorMessage(request);
 						class="btn btn-primary">
 						<i class="bi bi-save me-1"></i> Save
 					</button>
+					<%
+					if (bean.getId() > 0) {
+					%>
+					
+					<button type="submit" name="operation"
+						value="<%=BaseCtl.OP_CANCEL%>" class="btn btn-danger ms-auto">
+						<i class="bi bi-x-circle me-1"></i> Cancel
+					</button>
+
+					<%
+					} else {
+					%>
+
+					<a href="ProductCtl" class="btn btn-secondary ms-auto"> <i
+						class="bi bi-arrow-clockwise me-1"></i> Reset
+					</a>
+					<%
+					}
+					%>
+
 				</div>
+				
+				
 			</form>
 		</div>
 	</div>

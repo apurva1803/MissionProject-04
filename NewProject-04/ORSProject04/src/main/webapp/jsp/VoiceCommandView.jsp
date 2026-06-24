@@ -1,12 +1,12 @@
-<%@page import="com.sunilos.p4.ctl.ServerCtl"%>
+<%@page import="com.sunilos.p4.ctl.VoiceCommandCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.DataUtility"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sunilos.p4.bean.ServerBean"%>
+<%@page import="com.sunilos.p4.bean.VoiceCommandBean"%>
 
-<jsp:useBean id="bean" class="com.sunilos.p4.bean.ServerBean"
+<jsp:useBean id="bean" class="com.sunilos.p4.bean.VoiceCommandBean"
 	scope="request"></jsp:useBean>
 
 <%
@@ -21,7 +21,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
 				<i class="bi bi-bookmark-star-fill me-2"></i>
-				<%=bean.getId() > 0 ? "Edit Server" : "Add Server"%>
+				<%=bean.getId() > 0 ? "Edit VOICE COMMAND" : "Add VOICE COMMAND"%>
 			</h5>
 		</div>
 
@@ -44,7 +44,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			}
 			%>
 
-			<form action="<%=ORSView.SERVER_CTL%>" method="POST">
+			<form action="<%=ORSView.VOICECOMMAND_CTL%>" method="POST">
 				<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
 					type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
 				<input type="hidden" name="modifiedBy"
@@ -56,35 +56,27 @@ String _err = ServletUtility.getErrorMessage(request);
 
 
 				<div class="mb-3">
-					<label class="form-label fw-semibold">Server Name <span
-						class="text-danger">*</span></label> <input type="text" name="serverName"
+					<label class="form-label fw-semibold">Command Name <span
+						class="text-danger">*</span></label> <input type="text" name="commandName"
 						class="form-control" maxlength="100"
-						value="<%=DataUtility.getStringData(bean.getServerName())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("serverName", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getCommandName())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("commandName", request)%></div>
 				</div>
 
 				<div class="mb-3">
-					<label class="form-label fw-semibold">IP Address <span
-						class="text-danger">*</span></label> <input type="text" name="ipAddress" 
+					<label class="form-label fw-semibold">Response <span
+						class="text-danger">*</span></label> <input type="text" name="response" 
 						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getIpAddress())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("ipAddress", request)%></div>
-				</div>
-
-				<div class="mb-3">
-					<label class="form-label fw-semibold">CPU Usage <span
-						class="text-danger">*</span></label> <input type="text" name="cpuUsage"
-						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getCpuUsage())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("cpuUsage", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getResponse())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("response", request)%></div>
 				</div>
 				
 				<div class="mb-3">
-					<label class="form-label fw-semibold">Status <span
-						class="text-danger">*</span></label> <input type="text" name="status" 
+					<label class="form-label fw-semibold">Language <span
+						class="text-danger">*</span></label> <input type="text" name="language" 
 						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getStatus())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("status", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getLanguage())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("language", request)%></div>
 				</div>
 
 				<div class="d-flex gap-2 pt-2 border-top">
@@ -105,7 +97,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					} else {
 					%>
 
-					<a href="ServerCtl" class="btn btn-secondary ms-auto"> <i
+					<a href="VoiceCommandCtl" class="btn btn-secondary ms-auto"> <i
 						class="bi bi-arrow-clockwise me-1"></i> Reset
 					</a>
 					<%

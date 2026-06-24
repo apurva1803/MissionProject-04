@@ -45,6 +45,7 @@ public class ServerCtl extends BaseCtl<ServerBean, ServerModel>{
 		
 		ServerBean bean = new ServerBean();
 
+		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setServerName(DataUtility.getString(request.getParameter("serverName")));
 		bean.setIpAddress(DataUtility.getString(request.getParameter("ipAddress")));
 		bean.setCpuUsage(DataUtility.getDouble(request.getParameter("cpuUsage")));
@@ -63,7 +64,7 @@ public class ServerCtl extends BaseCtl<ServerBean, ServerModel>{
 	@Override
 	protected String getView(String op) {
 		if (OP_CANCEL.equalsIgnoreCase(op)) {
-			return ORSView.SERVER_CTL;
+			return ORSView.SERVER_LIST_CTL;
 		}
 		return ORSView.SERVER_VIEW;
 	}

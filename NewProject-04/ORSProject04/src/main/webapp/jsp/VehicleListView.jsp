@@ -1,4 +1,4 @@
-<%@page import="com.sunilos.p4.bean.ServerBean"%>
+<%@page import="com.sunilos.p4.bean.VehicleBean"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
@@ -10,7 +10,7 @@ int pageNo = ServletUtility.getPageNo(request);
 int pageSize = ServletUtility.getPageSize(request);
 int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
-Iterator<ServerBean> it = list.iterator();
+Iterator<VehicleBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
 %>
 
@@ -21,7 +21,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			class="card-header text-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
-				<i class="bi bi-cart me-2"></i> Server List
+				<i class="bi bi-cart me-2"></i> Vehicle List
 			</h5>
 			<div class="d-flex gap-2">
 				<a href="#" target="_blank"
@@ -30,30 +30,25 @@ String _err = ServletUtility.getErrorMessage(request);
 				</a> <a href="#?type=doc" target="_blank"
 					class="btn btn-sm btn-info fw-semibold"> <i
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
-				</a> <a href="<%=ORSView.SERVER_CTL%>"
+				</a> <a href="<%=ORSView.VEHICLE_CTL%>"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-cart me-1"></i> Add Server
+					class="bi bi-cart me-1"></i> Add Vehicle
 				</a>
 			</div>
 		</div>
 
-		<form action="<%=ORSView.SERVER_LIST_CTL%>" method="POST">
+		<form action="<%=ORSView.VEHICLE_LIST_CTL%>" method="POST">
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
 
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
 				
-				<input type="text" name="serverName"
+				<input type="text" name="model"
 					class="form-control form-control-sm" style="max-width: 220px;"
-					placeholder="Search by serverName"
-					value="<%=ServletUtility.getParameter("serverName", request)%>">
-					
-				<input type="text" name="ipAddress"
-					class="form-control form-control-sm" style="max-width: 220px;"
-					placeholder="Search by ipAddress"
-					value="<%=ServletUtility.getParameter("ipAddress", request)%>">
-					
+					placeholder="Search by model"
+					value="<%=ServletUtility.getParameter("model", request)%>">
+				
 					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
@@ -83,28 +78,27 @@ String _err = ServletUtility.getErrorMessage(request);
 							<th width="40"><input type="checkbox"
 								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
 							<th>S No.</th>
-							<th>Server Name</th>
-							<th>IP Address</th>
-							<th>CPU Usage</th>
-							<th>Status</th>
+							<th>Vehicle No</th>
+							<th>Owner Name</th>
+							<th>Model</th>
+							<th>Color</th>
 							<th>Edit</th>
 						</tr>
 					</thead>
 					<tbody>
 						<%
 						while (it.hasNext()) {
-							ServerBean bean = it.next();
+							VehicleBean bean = it.next();
 						%>
 						<tr>
 							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 							<td class="text-muted small"><%=index++%></td>
-							<td class="fw-semibold"><%=bean.getServerName()%></td>
-							<td><%=bean.getIpAddress()%></td>
-							<td><%=bean.getCpuUsage()%></td>
-							<td><%=bean.getStatus()%></td>
-							
-							<td><a href="ServerCtl?id=<%=bean.getId()%>"
+							<td class="fw-semibold"><%=bean.getVehicleNo()%></td>
+							<td><%=bean.getOwnerName()%></td>
+							<td><%=bean.getModel()%></td>
+							<td><%=bean.getColor()%></td>
+							<td><a href="VehicleCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
 									class="bi bi-pencil"></i> Edit
 							</a></td>

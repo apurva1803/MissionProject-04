@@ -246,9 +246,9 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Product List
 						</a></li>
 						
-						<li><hr class="dropdown-divider border-secondary"></li>
 						
-						<!-- Server -->
+						
+						<%-- <!-- Server -->
 						<li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-person-gear me-1"></i> Server
@@ -260,7 +260,56 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.SERVER_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Server List
+						</a></li> --%>
+						
+						<%-- <!-- VoiceCommand -->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Voice Command
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.VOICECOMMAND_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Voice Command
 						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.VOICECOMMAND_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Voice Command List
+						</a></li> --%>
+						
+						<!-- Hostel -->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Hostel
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.HOSTEL_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Hostel
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.HOSTEL_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Hostel List
+						</a></li>
+						
+						<!-- Vehicle -->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Vehicle
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.VEHICLE_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Vehicle
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.VEHICLE_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Vehicle List
+						</a></li>
+						
 					</ul></li>
 					
 					
@@ -338,6 +387,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-file-earmark-pdf me-2 text-warning"></i> Marksheet
 								List
 						</a></li>
+						
 						
 						
 

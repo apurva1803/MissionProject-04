@@ -48,6 +48,12 @@ public interface ORSView {
 	public String PRODUCT_LIST_VIEW = PAGE_FOLDER + "/ProductListView.jsp";
 	public String SERVER_VIEW = PAGE_FOLDER + "/ServerView.jsp";
 	public String SERVER_LIST_VIEW = PAGE_FOLDER + "/ServerListView.jsp";
+	public String VOICECOMMAND_VIEW = PAGE_FOLDER + "/VoiceCommandView.jsp";
+	public String VOICECOMMAND_LIST_VIEW = PAGE_FOLDER + "/VoiceCommandListView.jsp";
+	public String HOSTEL_VIEW = PAGE_FOLDER + "/HostelView.jsp";
+	public String HOSTEL_LIST_VIEW = PAGE_FOLDER + "/HostelListView.jsp";
+	public String VEHICLE_VIEW = PAGE_FOLDER + "/VehicleView.jsp";
+	public String VEHICLE_LIST_VIEW = PAGE_FOLDER + "/VehicleListView.jsp";
 	
 	
 	//	ctl and listctl
@@ -87,6 +93,12 @@ public interface ORSView {
 	public String PRODUCT_LIST_CTL = APP_CONTEXT + "/ctl/ProductListCtl";
 	public String SERVER_CTL = APP_CONTEXT + "/ctl/ServerCtl";
 	public String SERVER_LIST_CTL = APP_CONTEXT + "/ctl/ServerListCtl";
+	public String VOICECOMMAND_CTL = APP_CONTEXT + "/ctl/VoiceCommandCtl";
+	public String VOICECOMMAND_LIST_CTL = APP_CONTEXT + "/ctl/VoiceCommandListCtl";
+	public String HOSTEL_CTL = APP_CONTEXT + "/ctl/HostelCtl";
+	public String HOSTEL_LIST_CTL = APP_CONTEXT + "/ctl/HostelListCtl";
+	public String VEHICLE_CTL = APP_CONTEXT + "/ctl/VehicleCtl";
+	public String VEHICLE_LIST_CTL = APP_CONTEXT + "/ctl/VehicleListCtl";
 	
 	
 	//	report ctl

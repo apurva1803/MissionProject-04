@@ -1,12 +1,12 @@
-<%@page import="com.sunilos.p4.ctl.ServerCtl"%>
+<%@page import="com.sunilos.p4.ctl.HostelCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.DataUtility"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
 <%@page import="java.util.List"%>
-<%@page import="com.sunilos.p4.bean.ServerBean"%>
+<%@page import="com.sunilos.p4.bean.HostelBean"%>
 
-<jsp:useBean id="bean" class="com.sunilos.p4.bean.ServerBean"
+<jsp:useBean id="bean" class="com.sunilos.p4.bean.HostelBean"
 	scope="request"></jsp:useBean>
 
 <%
@@ -21,7 +21,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
 				<i class="bi bi-bookmark-star-fill me-2"></i>
-				<%=bean.getId() > 0 ? "Edit Server" : "Add Server"%>
+				<%=bean.getId() > 0 ? "Edit Hostel" : "Add Hostel"%>
 			</h5>
 		</div>
 
@@ -44,7 +44,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			}
 			%>
 
-			<form action="<%=ORSView.SERVER_CTL%>" method="POST">
+			<form action="<%=ORSView.HOSTEL_CTL%>" method="POST">
 				<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
 					type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
 				<input type="hidden" name="modifiedBy"
@@ -56,35 +56,35 @@ String _err = ServletUtility.getErrorMessage(request);
 
 
 				<div class="mb-3">
-					<label class="form-label fw-semibold">Server Name <span
-						class="text-danger">*</span></label> <input type="text" name="serverName"
+					<label class="form-label fw-semibold">Owner Name <span
+						class="text-danger">*</span></label> <input type="text" name="ownerName"
 						class="form-control" maxlength="100"
-						value="<%=DataUtility.getStringData(bean.getServerName())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("serverName", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getOwnerName())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("ownerName", request)%></div>
 				</div>
 
 				<div class="mb-3">
-					<label class="form-label fw-semibold">IP Address <span
-						class="text-danger">*</span></label> <input type="text" name="ipAddress" 
+					<label class="form-label fw-semibold">Location <span
+						class="text-danger">*</span></label> <input type="text" name="location" 
 						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getIpAddress())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("ipAddress", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getLocation())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("location", request)%></div>
 				</div>
 
 				<div class="mb-3">
-					<label class="form-label fw-semibold">CPU Usage <span
-						class="text-danger">*</span></label> <input type="text" name="cpuUsage"
+					<label class="form-label fw-semibold">Rent <span
+						class="text-danger">*</span></label> <input type="text" name="rent"
 						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getCpuUsage())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("cpuUsage", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getRent())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("rent", request)%></div>
 				</div>
 				
 				<div class="mb-3">
-					<label class="form-label fw-semibold">Status <span
-						class="text-danger">*</span></label> <input type="text" name="status" 
+					<label class="form-label fw-semibold">Room Type <span
+						class="text-danger">*</span></label> <input type="text" name="roomType" 
 						class="form-control" maxlength="200"
-						value="<%=DataUtility.getStringData(bean.getStatus())%>">
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("status", request)%></div>
+						value="<%=DataUtility.getStringData(bean.getRoomType())%>">
+					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("roomType", request)%></div>
 				</div>
 
 				<div class="d-flex gap-2 pt-2 border-top">
@@ -105,7 +105,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					} else {
 					%>
 
-					<a href="ServerCtl" class="btn btn-secondary ms-auto"> <i
+					<a href="HostelCtl" class="btn btn-secondary ms-auto"> <i
 						class="bi bi-arrow-clockwise me-1"></i> Reset
 					</a>
 					<%

@@ -1,4 +1,4 @@
-<%@page import="com.sunilos.p4.bean.ServerBean"%>
+<%@page import="com.sunilos.p4.bean.VoiceCommandBean"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
@@ -10,7 +10,7 @@ int pageNo = ServletUtility.getPageNo(request);
 int pageSize = ServletUtility.getPageSize(request);
 int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
-Iterator<ServerBean> it = list.iterator();
+Iterator<VoiceCommandBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
 %>
 
@@ -21,7 +21,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			class="card-header text-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
-				<i class="bi bi-cart me-2"></i> Server List
+				<i class="bi bi-cart me-2"></i> Voice Command List
 			</h5>
 			<div class="d-flex gap-2">
 				<a href="#" target="_blank"
@@ -30,29 +30,29 @@ String _err = ServletUtility.getErrorMessage(request);
 				</a> <a href="#?type=doc" target="_blank"
 					class="btn btn-sm btn-info fw-semibold"> <i
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
-				</a> <a href="<%=ORSView.SERVER_CTL%>"
+				</a> <a href="<%=ORSView.VOICECOMMAND_CTL%>"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-cart me-1"></i> Add Server
+					class="bi bi-cart me-1"></i> Add VOICE COMMAND
 				</a>
 			</div>
 		</div>
 
-		<form action="<%=ORSView.SERVER_LIST_CTL%>" method="POST">
+		<form action="<%=ORSView.VOICECOMMAND_LIST_CTL%>" method="POST">
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
 
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
 				
-				<input type="text" name="serverName"
+				<input type="text" name="commandName"
 					class="form-control form-control-sm" style="max-width: 220px;"
-					placeholder="Search by serverName"
-					value="<%=ServletUtility.getParameter("serverName", request)%>">
+					placeholder="Search by commandName"
+					value="<%=ServletUtility.getParameter("commandName", request)%>">
 					
-				<input type="text" name="ipAddress"
+				<input type="text" name="language"
 					class="form-control form-control-sm" style="max-width: 220px;"
-					placeholder="Search by ipAddress"
-					value="<%=ServletUtility.getParameter("ipAddress", request)%>">
+					placeholder="Search by language"
+					value="<%=ServletUtility.getParameter("language", request)%>">
 					
 					
 				<button type="submit" name="operation"
@@ -83,28 +83,26 @@ String _err = ServletUtility.getErrorMessage(request);
 							<th width="40"><input type="checkbox"
 								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
 							<th>S No.</th>
-							<th>Server Name</th>
+							<th>Command Name</th>
 							<th>IP Address</th>
-							<th>CPU Usage</th>
-							<th>Status</th>
+							<th>Language</th>
 							<th>Edit</th>
 						</tr>
 					</thead>
 					<tbody>
 						<%
 						while (it.hasNext()) {
-							ServerBean bean = it.next();
+							VoiceCommandBean bean = it.next();
 						%>
 						<tr>
 							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 							<td class="text-muted small"><%=index++%></td>
-							<td class="fw-semibold"><%=bean.getServerName()%></td>
-							<td><%=bean.getIpAddress()%></td>
-							<td><%=bean.getCpuUsage()%></td>
-							<td><%=bean.getStatus()%></td>
+							<td class="fw-semibold"><%=bean.getCommandName()%></td>
+							<td><%=bean.getResponse()%></td>
+							<td><%=bean.getLanguage()%></td>
 							
-							<td><a href="ServerCtl?id=<%=bean.getId()%>"
+							<td><a href="VoiceCommandCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
 									class="bi bi-pencil"></i> Edit
 							</a></td>

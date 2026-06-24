@@ -40,6 +40,7 @@ public class JDBCDataSource {
 
 			datasource = new JDBCDataSource();
 			datasource.cpds = new ComboPooledDataSource();
+			
 			try {
 				datasource.cpds.setDriverClass(rb.getString("driver"));
 			} catch (Exception e) {

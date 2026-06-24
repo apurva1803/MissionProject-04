@@ -19,15 +19,13 @@ public class ServerModel extends BaseModel<ServerBean>{
 
 		ServerBean existbean = findByProductName(bean.getServerName());
 
-		if (existbean != null) {
+		if (existbean != null && !(bean.getId() == existbean.getId())) {
 			throw new DuplicateRecordException("productName already exists");
 		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
-			pk = nextPK();
-			// Get auto-generated next primary key
-			System.out.println(pk + " in ModelJDBC");
+			
 			conn.setAutoCommit(false); // Begin transaction
 			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO " + getTable() + " VALUES(?,?,?,?,?,?,?,?,?)");
 			pstmt.setInt(1, pk);
@@ -63,21 +61,19 @@ public class ServerModel extends BaseModel<ServerBean>{
 		
 		log.debug("Model update Started");
 		Connection conn = null;
-		int pk = 0;
+		
 
 		ServerBean existbean = findByProductName(bean.getServerName());
 
-		if (existbean != null) {
+		if (existbean != null && !(bean.getId() == existbean.getId())) {
 			throw new DuplicateRecordException("productName already exists");
 		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
-			pk = nextPK();
-			// Get auto-generated next primary key
-			System.out.println(pk + " in ModelJDBC");
+			
 			conn.setAutoCommit(false); // Begin transaction
-			PreparedStatement pstmt = conn.prepareStatement("UPDATE " + getTable() + " SET SERVER_NAME=?, IP_ADDRESS=?, CPU_USAGE=?, STATUS=? CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?" );
+			PreparedStatement pstmt = conn.prepareStatement("UPDATE " + getTable() + " SET SERVER_NAME=?, IP_ADDRESS=?, CPU_USAGE=?, STATUS=?, CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?" );
 			
 			pstmt.setString(1, bean.getServerName());
 			pstmt.setString(2, bean.getIpAddress());
@@ -87,7 +83,7 @@ public class ServerModel extends BaseModel<ServerBean>{
 			pstmt.setString(6, bean.getModifiedBy());
 			pstmt.setTimestamp(7, bean.getCreatedDatetime());
 			pstmt.setTimestamp(8, bean.getModifiedDatetime());
-			pstmt.setInt(9, pk);
+			pstmt.setLong(9, bean.getId());
 			
 			pstmt.executeUpdate();
 			conn.commit(); // End transaction
