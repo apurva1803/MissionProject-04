@@ -35,7 +35,7 @@ MessageSource ms = MessageSource.getInstance();
 				<h4 class="fw-bold mb-1">
 					<ors:message key="login.title" />
 				</h4>
-				<p class="mb-0 opacity-75 small">Online Result System</p>
+				<p class="mb-0 opacity-75 small"><%=ms.get("welcome.message") %></p>
 			</div>
 
 			<!-- Card body -->
