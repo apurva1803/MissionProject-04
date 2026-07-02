@@ -310,6 +310,38 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Vehicle List
 						</a></li>
 						
+						<!-- School Student -->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> School Student
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.SCHOOLSTUDENT_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add School Student
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.SCHOOLSTUDENT_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> School Student List
+						</a></li>
+						
+						<!-- Face Recognition -->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Face Recognition
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.FACERECOGNITION_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Face Recognition
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.FACERECOGNITION_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Face Recognition List
+						</a></li>
+						
 					</ul></li>
 					
 					

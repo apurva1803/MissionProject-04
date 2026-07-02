@@ -33,7 +33,7 @@ MessageSource ms = MessageSource.getInstance();
 					</div>
 				</div>
 				<h4 class="fw-bold mb-1">
-					<ors:message key="login.title" />
+					<%=ms.get("login.title") %>
 				</h4>
 				<p class="mb-0 opacity-75 small"><%=ms.get("welcome.message") %></p>
 			</div>

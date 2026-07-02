@@ -54,6 +54,10 @@ public interface ORSView {
 	public String HOSTEL_LIST_VIEW = PAGE_FOLDER + "/HostelListView.jsp";
 	public String VEHICLE_VIEW = PAGE_FOLDER + "/VehicleView.jsp";
 	public String VEHICLE_LIST_VIEW = PAGE_FOLDER + "/VehicleListView.jsp";
+	public String SCHOOLSTUDENT_VIEW = PAGE_FOLDER + "/SchoolStudentView.jsp";
+	public String SCHOOLSTUDENT_LIST_VIEW = PAGE_FOLDER + "/SchoolStudentListView.jsp";
+	public String FACERECOGNITION_VIEW = PAGE_FOLDER + "/FaceRecognitionView.jsp";
+	public String FACERECOGNITION_LIST_VIEW = PAGE_FOLDER + "/FaceRecognitionListView.jsp";
 	
 	
 	//	ctl and listctl
@@ -99,6 +103,10 @@ public interface ORSView {
 	public String HOSTEL_LIST_CTL = APP_CONTEXT + "/ctl/HostelListCtl";
 	public String VEHICLE_CTL = APP_CONTEXT + "/ctl/VehicleCtl";
 	public String VEHICLE_LIST_CTL = APP_CONTEXT + "/ctl/VehicleListCtl";
+	public String SCHOOLSTUDENT_CTL = APP_CONTEXT + "/ctl/SchoolStudentCtl";
+	public String SCHOOLSTUDENT_LIST_CTL = APP_CONTEXT + "/ctl/SchoolStudentListCtl";
+	public String FACERECOGNITION_CTL = APP_CONTEXT + "/ctl/FaceRecognitionCtl";
+	public String FACERECOGNITION_LIST_CTL = APP_CONTEXT + "/ctl/FaceRecognitionListCtl";
 	
 	
 	//	report ctl

@@ -35,7 +35,8 @@ public final class MessageSource {
 		}
 		return ms;
 	}
-
+	
+	//language set ki
 	public void setLocale(String lang) {
 		rb = ResourceBundle.getBundle("message", new Locale(lang));
 	}
@@ -47,7 +48,7 @@ public final class MessageSource {
 	public String get(String key) {
 		String val = "";
 		try {
-			val = rb.getString(key);
+			val = rb.getString(key);	//
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,7 +58,7 @@ public final class MessageSource {
 	public static void main(String[] args) {
 		MessageSource ms = MessageSource.getInstance();
 		ms.setLocale("hi");
-		String val = ms.get("login.userid1");
+		String val = ms.get("login.title");
 		System.out.println("-->" + val);
 	}
 }
