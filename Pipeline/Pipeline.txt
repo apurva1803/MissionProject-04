@@ -1,0 +1,109 @@
+pipeline {
+    agent any
+
+    environment {
+        JAVA_HOME = "/opt/homebrew/Cellar/openjdk@17/17.0.19/libexec/openjdk.jdk/Contents/Home"
+        MAVEN_HOME = "/opt/homebrew/opt/maven"
+        PATH = "/opt/homebrew/bin:/usr/local/bin:${JAVA_HOME}/bin:${MAVEN_HOME}/bin:${PATH}"
+    }
+
+    stages {
+
+        stage('Cleanup Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+                git url: 'https://github.com/apurva1803/MissionProject-04.git',
+                    branch: 'main'
+            }
+        }
+
+        stage('Build WAR') {
+            steps {
+                sh '''
+                cd NewProject-04/ORSProject04
+                mvn clean package -DskipTests
+                '''
+            }
+        }
+
+        stage('Remove Old Containers') {
+            steps {
+                sh '''
+                echo "Stopping old containers..."
+
+                docker stop ors-container || true
+                docker rm ors-container || true
+
+                docker stop ORSProject04-webapp || true
+                docker rm ORSProject04-webapp || true
+
+                docker stop ORSProject04-mysql || true
+                docker rm ORSProject04-mysql || true
+                '''
+            }
+        }
+
+        stage('Docker Compose Down') {
+            steps {
+                sh '''
+                cd NewProject-04/ORSProject04
+
+                docker compose down --remove-orphans || true
+                '''
+            }
+        }
+
+        stage('Docker Compose Build & Up') {
+            steps {
+                sh '''
+                cd NewProject-04/ORSProject04
+
+                docker compose up -d --build
+                '''
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh '''
+                echo "Waiting for application startup..."
+                sleep 40
+
+                echo "Checking running containers..."
+                docker ps
+
+                echo "Checking application URL..."
+
+                STATUS=$(curl -o /dev/null -s -w "%{http_code}" http://localhost:8888/ORSProject04/)
+
+                if [ "$STATUS" = "200" ] || [ "$STATUS" = "302" ]; then
+                    echo "Application deployed successfully - HTTP $STATUS"
+                else
+                    echo "Deployment failed - HTTP $STATUS"
+
+                    echo "Showing container logs..."
+                    docker logs ORSProject04-webapp
+
+                    exit 1
+                fi
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh '''
+            echo "Running Containers:"
+            docker ps
+            '''
+
+            deleteDir()
+        }
+    }
+}
