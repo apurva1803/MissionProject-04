@@ -32,7 +32,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
 				</a> <a href="<%=ORSView.PRODUCT_CTL%>"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-cart me-1"></i> Add Product
+					class="bi bi-cart me-1"></i> Add Subject
 				</a>
 			</div>
 		</div>
@@ -43,13 +43,14 @@ String _err = ServletUtility.getErrorMessage(request);
 
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
-				
 				<input type="text" name="productName"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by ProductName"
 					value="<%=ServletUtility.getParameter("productName", request)%>">
-				
-					
+				<input type="text" name="productName"
+					class="form-control form-control-sm" style="max-width: 220px;"
+					placeholder="Search by ProductName"
+					value="<%=ServletUtility.getParameter("productName", request)%>">
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
 					<i class="bi bi-search me-1"></i> Search

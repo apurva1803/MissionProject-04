@@ -1,6 +1,5 @@
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.DataValidator"%>
-<%@page import="com.sunilos.p4.util.MessageSource"%>
 
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://www.sunilos.com/ors-tags" prefix="ors"%>
@@ -60,7 +59,7 @@ String contextPath = request.getContextPath();
 	}
 
 	if (DataValidator.isNull(viewName)) {
-		viewName = "jsp/404.jsp";
+		viewName = "jsp/Welcome.jsp";
 	}
 	%>
 

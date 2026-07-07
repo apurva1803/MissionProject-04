@@ -241,6 +241,20 @@ String firstName = loggedIn ? currentUser.getFirstName() : "Guest";
 				</div>
 			</a>
 		</div>
+		
+		<div class="col-6 col-md-4 col-lg-3">
+			<a href="#" class="text-decoration-none">
+				<div
+					class="card h-100 border-0 shadow-sm rounded-4 text-center p-3 ors-card"
+					style="border-top: 4px solid #0891b2;">
+					<div class="fs-1 mb-2" style="color: #0891b2;">
+						<i class="bi bi-cart"></i>
+					</div>
+					<h6 class="fw-bold mb-1">Product</h6>
+					<p class="text-muted small mb-0">Manage Product records</p>
+				</div>
+			</a>
+		</div>
 
 		<%
 		} else {

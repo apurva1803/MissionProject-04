@@ -91,7 +91,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							<th width="40"><input type="checkbox"
 								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
 							<th>#</th>
-							<th>ID</th>
+							<!-- <th>ID</th> -->
 							<th>Name</th>
 							<th>Address</th>
 							<th>State</th>
@@ -109,7 +109,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 							<td class="text-muted small"><%=index++%></td>
-							<td class="text-muted small"><%=bean.getId()%></td>
+							<%-- <td class="text-muted small"><%=bean.getId()%></td> --%>
 							<td class="fw-semibold"><%=bean.getName()%></td>
 							<td><%=bean.getAddress()%></td>
 							<td><%=bean.getState()%></td>

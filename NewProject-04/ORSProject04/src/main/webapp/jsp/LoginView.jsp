@@ -29,13 +29,13 @@ MessageSource ms = MessageSource.getInstance();
 					<div
 						class="rounded-circle d-flex align-items-center justify-content-center"
 						style="width: 68px; height: 68px; background: rgba(255, 255, 255, 0.18); border: 2px solid rgba(255, 255, 255, 0.3); font-size: 1.9rem;">
-						<i class="fas fa-graduation-cap"></i>
+						<i class="bi bi-mortarboard-fill"></i>
 					</div>
 				</div>
 				<h4 class="fw-bold mb-1">
-					<%=ms.get("login.title") %>
+					<%=ms.get("login.title")%>
 				</h4>
-				<p class="mb-0 opacity-75 small"><%=ms.get("welcome.message") %></p>
+				<p class="mb-0 opacity-75 small">Online Result System</p>
 			</div>
 
 			<!-- Card body -->
@@ -103,12 +103,12 @@ MessageSource ms = MessageSource.getInstance();
 						class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
 						<a href="<%=ORSView.USER_REGISTRATION_CTL%>"
 							class="text-success fw-semibold text-decoration-none small">
-							<i class="bi bi-person-plus-fill me-1"></i>
-						<ors:message key="login.signup" />
+							<i class="bi bi-person-plus-fill me-1"></i> <ors:message
+								key="login.signup" />
 						</a> <a href="<%=ORSView.FORGET_PASSWORD_CTL%>"
 							class="text-secondary text-decoration-none small"> <i
-							class="bi bi-question-circle me-1"></i>
-						<ors:message key="login.forgotpassword" />
+							class="bi bi-question-circle me-1"></i> <ors:message
+								key="login.forgotpassword" />
 						</a>
 					</div>
 

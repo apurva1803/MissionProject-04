@@ -75,6 +75,7 @@ public class DataUtility {
 			return 0;
 		}
 	}
+
 	
 	public static double getDouble(String val) {
 		if (DataValidator.isDouble(val)) {
@@ -83,7 +84,6 @@ public class DataUtility {
 			return 0;
 		}
 	}
-
 	/**
 	 * Parses a date string (MM/dd/yyyy) into a Date
 	 */

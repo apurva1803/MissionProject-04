@@ -16,7 +16,7 @@ genderMap.put("M", "Male");
 genderMap.put("F", "Female");
 %>
 
-<div class="container py-4" style="max-width: 660px;">
+<div class="container p-4" style="max-width: 660px;">
 	<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
 
 		<div class="card-header text-white border-0 py-4 px-4 text-center"
@@ -32,7 +32,7 @@ genderMap.put("F", "Female");
 			<p class="mb-0 opacity-75 small mt-1">Create your ORS account</p>
 		</div>
 
-		<div class="card-body px-4 py-4">
+		<div class="card-body p-4">
 
 			<%
 			if (_suc != null && !_suc.isEmpty()) {
@@ -65,7 +65,7 @@ genderMap.put("F", "Female");
 					<div class="col-md-6">
 						<label class="form-label fw-semibold">First Name <span
 							class="text-danger">*</span></label> <input type="text" name="firstName"
-							class="form-control"
+							class="form-control" placeholder="enter first name"
 							value="<%=DataUtility.getStringData(bean.getFirstName())%>">
 						<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("firstName", request)%></div>
 					</div>

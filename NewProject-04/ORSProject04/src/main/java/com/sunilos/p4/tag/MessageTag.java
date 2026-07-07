@@ -37,7 +37,9 @@ public class MessageTag extends TagSupport {
 	@Override
 	public int doStartTag() throws JspException {
 		try {
+			System.out.println("Key ======> " + key);
 			String val = ms.get(key);
+			System.out.println("value =====> " + val);
 			// Get the JspWriter to write content to the JSP
 			JspWriter out = pageContext.getOut();
 			out.write(val);

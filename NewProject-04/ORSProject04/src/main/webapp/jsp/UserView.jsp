@@ -125,10 +125,11 @@ genderMap.put("F", "Female");
 					<label class="form-label fw-semibold">Date of Birth
 						(mm/dd/yyyy)</label>
 					<div class="input-group">
-						<input type="text" name="dob" id="udate" class="form-control" placeholder="Select date of birth"
-							readonly value="<%=DataUtility.getDateString(bean.getDob())%>">
-						<a class="btn btn-outline-secondary"> <img
-							src="../img/cal.jpg" width="16" height="15" alt="Calendar">
+						<input type="text" name="dob" id="udate" class="form-control"
+							placeholder="Select date of birth" readonly
+							value="<%=DataUtility.getDateString(bean.getDob())%>"> <a
+							class="btn btn-outline-secondary"> <img src="../img/cal.jpg"
+							width="16" height="15" alt="Calendar">
 						</a>
 					</div>
 					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("dob", request)%></div>
@@ -139,17 +140,7 @@ genderMap.put("F", "Female");
 						class="btn btn-primary">
 						<i class="bi bi-save me-1"></i> Save
 					</button>
-					<%
-					if (bean.getId() > 0) {
-					%>
-					<button type="submit" name="operation"
-						value="<%=BaseCtl.OP_DELETE%>" class="btn btn-danger"
-						onclick="return confirm('Delete this user?')">
-						<i class="bi bi-trash me-1"></i> Delete
-					</button>
-					<%
-					}
-					%>
+
 					<a href="UserListCtl?id=0" class="btn btn-secondary ms-auto"> <i
 						class="bi bi-x-circle me-1"></i> Cancel
 					</a>
