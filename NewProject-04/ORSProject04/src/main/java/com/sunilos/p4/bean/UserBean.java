@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * User JavaBean encapsulates User attributes
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

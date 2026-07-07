@@ -6,7 +6,7 @@ import java.sql.SQLException;
 /**
  * College JavaBean encapsulates College attributes
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

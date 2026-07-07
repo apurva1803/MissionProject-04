@@ -3,7 +3,7 @@ package com.sunilos.p4.util;
 /**
  * Contains Email Message
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

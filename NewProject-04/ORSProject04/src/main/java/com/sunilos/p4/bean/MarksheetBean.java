@@ -6,7 +6,7 @@ import java.sql.SQLException;
 /**
  * Marksheet JavaBean encapsulates Marksheet attributes
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

@@ -4,7 +4,7 @@ package com.sunilos.p4.exception;
  * ApplicationException is propogated from Service classes when an business
  * logic exception occurered.
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

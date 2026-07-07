@@ -8,7 +8,7 @@ import com.sunilos.p4.util.EmailUtility;
 /**
  * Testcase to test EmailUtility class
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  */

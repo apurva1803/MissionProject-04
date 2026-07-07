@@ -4,7 +4,7 @@ package com.sunilos.p4.bean;
  * DropdownList interface is implemented by Beans those are used to create drop
  * down list on HTML pages
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 

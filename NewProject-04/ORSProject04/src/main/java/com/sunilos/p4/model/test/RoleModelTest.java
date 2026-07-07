@@ -13,7 +13,7 @@ import com.sunilos.p4.model.RoleModel;
 /**
  * Role Model Test classes
  * 
- * @author Rays Technologies
+ * @auther Apurva Deshmukh
  * @version 1.0
  * @Copyright (c) Rays Technologies
  * 
