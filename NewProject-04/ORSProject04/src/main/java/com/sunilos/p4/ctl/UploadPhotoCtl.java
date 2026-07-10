@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.UUID;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -26,43 +25,17 @@ import com.sunilos.p4.util.DataUtility;
 import com.sunilos.p4.util.DataValidator;
 import com.sunilos.p4.util.PropertyReader;
 
-/**
- * Upload Photo functionality Controller. Receives a photo through a multipart
- * form for the logged in User, stores it under the base path configured by the
- * <code>photoPath</code> key in system.properties using a randomly generated
- * unique file name, and updates the relative path of the stored photo against
- * the User record.
- *
- * @author Apurva Deshmukh
- * @version 1.0
- * @Copyright (c) Rays EdTech
- */
-
 @WebServlet("/ctl/uploadphoto")
 @MultipartConfig
 public class UploadPhotoCtl extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Fallback photo served when the User has no photo uploaded yet, or the stored
-	 * photo file can no longer be found on disk.
-	 */
-	private static final String DEFAULT_PHOTO_PATH = "F:/ORSProject4/image/logo.jpg";
-
 	private static Logger log = Logger.getLogger(UploadPhotoCtl.class);
 
-	/**
-	 * Streams the photo of the User identified by the <code>id</code> request
-	 * parameter back in the response, so it can be used as the source of an HTML
-	 * <code>&lt;img&gt;</code> tag. Falls back to {@link #DEFAULT_PHOTO_PATH} when
-	 * the user has no photo or the stored photo file is missing.
-	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		log.debug("UploadPhotoCtl Method doGet Started");
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
@@ -72,144 +45,138 @@ public class UploadPhotoCtl extends HttpServlet {
 		try {
 			bean = model.findByPK(id);
 		} catch (ApplicationException e) {
-			log.error(e);
+			e.printStackTrace();
 		}
 
-		File photoFile = null;
 		String basePath = PropertyReader.getValue("photoPath");
 
-		if (bean != null && DataValidator.isNotNull(bean.getPhoto())) {
-			File candidate = new File(basePath, bean.getPhoto());
-			if (candidate.exists()) {
-				photoFile = candidate;
-			}
-		}
+		File photoFile = null;
 
-		if (photoFile == null) {
-			photoFile = new File(basePath + "/logo.png");
-			if (!photoFile.exists()) {
-				response.sendError(HttpServletResponse.SC_NOT_FOUND);
+		// Check whether user has uploaded a photo
+		if (bean != null && DataValidator.isNotNull(bean.getPhoto())) {
+
+			photoFile = new File(basePath, bean.getPhoto());
+
+			if (photoFile.exists()) {
+
+				String contentType = getServletContext().getMimeType(photoFile.getName());
+
+				if (contentType == null) {
+					contentType = "application/octet-stream";
+				}
+
+				response.setContentType(contentType);
+
+				FileInputStream fis = new FileInputStream(photoFile);
+				OutputStream os = response.getOutputStream();
+
+				byte[] buffer = new byte[4096];
+				int bytes;
+
+				while ((bytes = fis.read(buffer)) != -1) {
+					os.write(buffer, 0, bytes);
+				}
+
+				fis.close();
+				os.close();
 				return;
 			}
 		}
 
-		String contentType = getServletContext().getMimeType(photoFile.getName());
-		if (contentType == null) {
-			contentType = "application/octet-stream";
+		// If no uploaded photo exists, show the default logo from WAR
+		InputStream is = getServletContext().getResourceAsStream("/img/logo.jpg");
+
+		if (is == null) {
+			response.sendError(HttpServletResponse.SC_NOT_FOUND);
+			return;
 		}
 
-		response.setContentType(contentType);
-		response.setContentLengthLong(photoFile.length());
+		response.setContentType("image/png");
 
-		try (InputStream input = new FileInputStream(photoFile); OutputStream output = response.getOutputStream()) {
+		OutputStream os = response.getOutputStream();
 
-			byte[] buffer = new byte[4096];
-			int bytesRead;
+		byte[] buffer = new byte[4096];
+		int bytes;
 
-			while ((bytesRead = input.read(buffer)) != -1) {
-				output.write(buffer, 0, bytesRead);
-			}
+		while ((bytes = is.read(buffer)) != -1) {
+			os.write(buffer, 0, bytes);
 		}
 
-		log.debug("UploadPhotoCtl Method doGet Ended");
+		is.close();
+		os.close();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		log.debug("UploadPhotoCtl Method doPost Started");
-
 		long id = DataUtility.getLong(request.getParameter("id"));
-
 		String view = request.getParameter("view");
 
 		Part part = request.getPart("photo");
 
-		if (part == null || part.getSize() <= 0) {
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response.setContentType("text/plain");
-			response.getWriter().print("Please select a photo to upload");
+		if (part == null || part.getSize() == 0) {
+			response.getWriter().println("Please select a photo.");
 			return;
 		}
 
-		String uniqueFileName = UUID.randomUUID().toString() + getFileExtension(part);
+		// Original file name
+		String fileName = part.getSubmittedFileName();
 
+		// Folder path from system.properties
 		String basePath = PropertyReader.getValue("photoPath");
-		File baseDir = new File(basePath);
 
-		if (!baseDir.exists()) {
-			baseDir.mkdirs();
+		File folder = new File(basePath);
+
+		if (!folder.exists()) {
+			folder.mkdirs();
 		}
 
-		File destFile = new File(baseDir, uniqueFileName);
+		File destFile = new File(folder, fileName);
 
-		try (InputStream input = part.getInputStream(); OutputStream output = new FileOutputStream(destFile)) {
+		// Save file
+		InputStream input = part.getInputStream();
+		FileOutputStream output = new FileOutputStream(destFile);
 
-			byte[] buffer = new byte[4096];
-			int bytesRead;
+		byte[] buffer = new byte[4096];
+		int bytesRead;
 
-			while ((bytesRead = input.read(buffer)) != -1) {
-				output.write(buffer, 0, bytesRead);
-			}
+		while ((bytesRead = input.read(buffer)) != -1) {
+			output.write(buffer, 0, bytesRead);
 		}
+
+		input.close();
+		output.close();
 
 		UserModel model = new UserModel();
 
 		try {
-			model.updatePhoto(id, uniqueFileName);
+
+			// Update photo name in database
+			model.updatePhoto(id, fileName);
+
+			// Refresh session user
 			UserBean bean = model.findByPK(id);
 
 			HttpSession session = request.getSession(false);
+
 			if (session != null) {
-				UserBean sessionUser = (UserBean) session.getAttribute("user");
-				if (sessionUser != null && sessionUser.getId() == id) {
+				UserBean user = (UserBean) session.getAttribute("user");
+
+				if (user != null && user.getId() == id) {
 					session.setAttribute("user", bean);
 				}
 			}
+
 		} catch (ApplicationException e) {
-			log.error(e);
-			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-			response.setContentType("text/plain");
-			response.getWriter().print(e.getMessage());
-			return;
+			e.printStackTrace();
 		}
 
-		// redirect to ctl/UserCtl?id=7
+		// Redirect
 		if ("profile".equals(view)) {
 			response.sendRedirect("MyProfileCtl");
 		} else {
 			response.sendRedirect("UserCtl?id=" + id);
 		}
-		log.debug("UploadPhotoCtl Method doPost Ended");
 	}
-
-	/**
-	 * Extracts file extension (including the leading dot) from the uploaded Part's
-	 * original file name
-	 *
-	 * @param part
-	 * @return
-	 */
-	private String getFileExtension(Part part) {
-
-		String fileName = null;
-
-		for (String token : part.getHeader("content-disposition").split(";")) {
-			if (token.trim().startsWith("filename")) {
-				fileName = token.substring(token.indexOf('=') + 1).trim().replace("\"", "");
-			}
-		}
-
-		if (fileName != null && fileName.lastIndexOf('.') >= 0) {
-			return fileName.substring(fileName.lastIndexOf('.'));
-		}
-
-		return "";
-	}
-
 }
