@@ -13,7 +13,6 @@ int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
 Iterator<UserBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
-String _suc = ServletUtility.getSuccessMessage(request);
 %>
 
 <div class="container-fluid px-4 py-4" style="max-width: 1000px;">
@@ -48,17 +47,18 @@ String _suc = ServletUtility.getSuccessMessage(request);
 				<input type="text" name="firstName"
 					class="form-control form-control-sm" style="max-width: 180px;"
 					placeholder="First Name"
-					value="<%=ServletUtility.getParameter("firstName", request)%>">
+					value="<%=ServletUtility.getParameter(" firstName ", request)%>">
 				<input type="text" name="login" class="form-control form-control-sm"
 					style="max-width: 200px;" placeholder="Login ID"
-					value="<%=ServletUtility.getParameter("login", request)%>">
+					value="<%=ServletUtility.getParameter(" login ", request)%>">
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
 					<i class="bi bi-search me-1"></i> Search
 				</button>
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_DELETE%>"
-					class="btn btn-danger btn-sm ms-auto">
+					class="btn btn-danger btn-sm ms-auto"
+					onclick="return confirm('Delete selected users?')">
 					<i class="bi bi-trash me-1"></i> Delete Selected
 				</button>
 			</div>
@@ -66,30 +66,9 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<%
 			if (_err != null && !_err.isEmpty()) {
 			%>
-			<div
-				class="alert alert-danger alert-dismissible fade show py-2 mx-3 mt-3"
-				role="alert">
+			<div class="alert alert-danger py-2 mx-3 mt-3">
 				<i class="bi bi-exclamation-triangle-fill me-2"></i>
 				<%=_err%>
-
-				<button type="button" class="btn-close" data-bs-dismiss="alert"
-					aria-label="Close"></button>
-			</div>
-			<%
-			}
-			%>
-
-			<%
-			if (_suc != null && !_suc.isEmpty()) {
-			%>
-			<div
-				class="alert alert-success alert-dismissible fade show py-2 mx-3 mt-3"
-				role="alert">
-				<i class="bi bi-exclamation-triangle-fill me-2"></i>
-				<%=_suc%>
-
-				<button type="button" class="btn-close" data-bs-dismiss="alert"
-					aria-label="Close"></button>
 			</div>
 			<%
 			}
@@ -101,7 +80,8 @@ String _suc = ServletUtility.getSuccessMessage(request);
 						<tr>
 							<th width="40"><input type="checkbox"
 								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
-							<th>#</th>
+							<th>S.No</th>
+							<th>Photo</th>
 							<th>First Name</th>
 							<th>Last Name</th>
 							<th>Login ID</th>
@@ -116,9 +96,16 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							UserBean bean = it.next();
 						%>
 						<tr>
+
 							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
+
 							<td class="text-muted small"><%=index++%></td>
+							<td><img
+								src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
+								onerror="this.style.display='none';" alt="User Photo"
+								class="rounded-circle border" width="30" height="30"
+								style="object-fit: cover;"></td>
 							<td class="fw-semibold"><%=bean.getFirstName()%></td>
 							<td><%=bean.getLastName()%></td>
 							<td><%=bean.getLogin()%></td>

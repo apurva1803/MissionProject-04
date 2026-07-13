@@ -7,6 +7,7 @@ com/sunilos/p4/ctl/EmployeeCtl.class
 com/sunilos/p4/model/RoleModel.class
 com/sunilos/p4/ctl/PerformanceMonitorFilter.class
 com/sunilos/p4/bean/BaseBean.class
+com/sunilos/p4/ctl/UploadPhotoCtl.class
 com/sunilos/p4/ctl/RoleCtl.class
 com/sunilos/p4/bean/UserBean.class
 com/sunilos/p4/ctl/MarksheetMeritListCtl.class
