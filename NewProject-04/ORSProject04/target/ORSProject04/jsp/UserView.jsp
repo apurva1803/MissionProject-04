@@ -11,7 +11,7 @@
 	scope="request"></jsp:useBean>
 
 <%
-List l = (List) request.getAttribute("roleList");
+List roleList = (List) request.getAttribute("roleList");
 String _suc = ServletUtility.getSuccessMessage(request);
 String _err = ServletUtility.getErrorMessage(request);
 HashMap genderMap = new HashMap();
@@ -60,13 +60,16 @@ genderMap.put("F", "Female");
 				<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST"
 					enctype="multipart/form-data"
 					class="d-flex align-items-center gap-2">
+
 					<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
 						type="file" name="photo" class="form-control form-control-sm"
 						accept="image/*">
+
 					<button type="submit"
 						class="btn btn-sm btn-outline-primary text-nowrap">
 						<i class="bi bi-upload me-1"></i> Upload Photo
 					</button>
+
 				</form>
 			</div>
 			<%
@@ -133,22 +136,28 @@ genderMap.put("F", "Female");
 					</div>
 					<div class="col-md-6">
 						<label class="form-label fw-semibold">Role</label>
-						<%=HTMLUtility.getList("roleId", String.valueOf(bean.getRoleId()), l)%>
+						<%=HTMLUtility.getList("roleId", String.valueOf(bean.getRoleId()), roleList)%>
 					</div>
 				</div>
+				
+				
 
 				<div class="mb-4">
-					<label class="form-label fw-semibold">Date of Birth
-						(mm/dd/yyyy)</label>
+					<label class="form-label fw-semibold"> Date of Birth
+						(mm/dd/yyyy) </label>
+
 					<div class="input-group">
 						<input type="text" name="dob" id="udate" class="form-control"
 							placeholder="Select date of birth" readonly
 							value="<%=DataUtility.getDateString(bean.getDob())%>"> <a
-							class="btn btn-outline-secondary"> <img src="../img/cal.jpg"
-							width="16" height="15" alt="Calendar">
+							class="btn btn-outline-secondary" id="calendarBtn"> <img
+							src="../img/cal.jpg" width="16" height="15" alt="Calendar">
 						</a>
 					</div>
-					<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("dob", request)%></div>
+
+					<div class="text-danger small mt-1">
+						<%=ServletUtility.getErrorMessage("dob", request)%>
+					</div>
 				</div>
 
 				<div class="d-flex gap-2 pt-2 border-top">
@@ -156,17 +165,7 @@ genderMap.put("F", "Female");
 						class="btn btn-primary">
 						<i class="bi bi-save me-1"></i> Save
 					</button>
-					<%
-					if (bean.getId() > 0) {
-					%>
-					<button type="submit" name="operation"
-						value="<%=BaseCtl.OP_DELETE%>" class="btn btn-danger"
-						onclick="return confirm('Delete this user?')">
-						<i class="bi bi-trash me-1"></i> Delete
-					</button>
-					<%
-					}
-					%>
+
 					<a href="UserListCtl?id=0" class="btn btn-secondary ms-auto"> <i
 						class="bi bi-x-circle me-1"></i> Cancel
 					</a>

@@ -2,10 +2,14 @@
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
+<%@page import="com.sunilos.p4.util.HTMLUtility"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
 
+<jsp:useBean id="bean" class="com.sunilos.p4.bean.FaceRecognitionBean"
+	scope="request"></jsp:useBean>
 <%
+List statusList = (List) request.getAttribute("statusList");
 int pageNo = ServletUtility.getPageNo(request);
 int pageSize = ServletUtility.getPageSize(request);
 int index = ((pageNo - 1) * pageSize) + 1;
@@ -49,10 +53,18 @@ String _err = ServletUtility.getErrorMessage(request);
 					placeholder="Search by userName"
 					value="<%=ServletUtility.getParameter("userName", request)%>">
 					
+					
 				<input type="text" name="status"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by status"
-					value="<%=ServletUtility.getParameter("status", request)%>">
+					value="<%=ServletUtility.getParameter("status", request)%>"> 
+					
+				<%-- <div class="row g-3 mb-3">
+					<div class="col-md-6">
+						<!-- <label class="form-label fw-semibold">statusList</label> -->
+						<%=HTMLUtility.getList("statusList", String.valueOf(bean.getStatus()), statusList)%>
+					</div>
+				</div> --%>
 					
 					
 				<button type="submit" name="operation"
@@ -93,7 +105,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					<tbody>
 						<%
 						while (it.hasNext()) {
-							FaceRecognitionBean bean = it.next();
+							bean = it.next();
 						%>
 						<tr>
 							<td><input type="checkbox" name="ids"

@@ -49,7 +49,7 @@ public class FaceRecognitionBean extends BaseBean{
 
 	@Override
 	public String getValue() {
-		return userName;
+		return status;
 	}
 	
 	@Override

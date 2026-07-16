@@ -408,7 +408,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 
 					</ul></li>
 					
-					<!-- ---- Use Case Reports (Admin only) ---- -->
+					<%-- <!-- ---- Use Case Reports (Admin only) ---- -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
 					data-bs-toggle="dropdown" aria-expanded="false"> <i
@@ -447,7 +447,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								List
 						</a></li> 
 					
-				</ul></li>
+				</ul></li> --%>
 					
 			
 					

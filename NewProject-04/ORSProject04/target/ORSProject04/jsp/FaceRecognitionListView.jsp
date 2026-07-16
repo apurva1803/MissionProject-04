@@ -49,10 +49,13 @@ String _err = ServletUtility.getErrorMessage(request);
 					placeholder="Search by userName"
 					value="<%=ServletUtility.getParameter("userName", request)%>">
 					
+					
 				<input type="text" name="status"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by status"
 					value="<%=ServletUtility.getParameter("status", request)%>">
+					
+					
 					
 					
 				<button type="submit" name="operation"
