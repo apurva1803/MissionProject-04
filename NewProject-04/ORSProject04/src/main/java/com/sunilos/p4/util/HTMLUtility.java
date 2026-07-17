@@ -36,7 +36,7 @@ public class HTMLUtility {
 
 		boolean select = true;
 		if (select) {
-			sb.append("<option selected value=''>--------------Select Gender---------------</option>");
+			sb.append("<option selected value=''>--------------Select---------------</option>");
 		}
 
 		for (String key : keys) {

@@ -4,6 +4,7 @@
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
 <%@page import="com.sunilos.p4.util.HTMLUtility"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="java.util.Iterator"%>
 
 <jsp:useBean id="bean" class="com.sunilos.p4.bean.FaceRecognitionBean"
@@ -16,6 +17,10 @@ int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
 Iterator<FaceRecognitionBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
+
+HashMap statusMap = new HashMap();
+statusMap.put("Successful", "Successful");
+statusMap.put("Failed", "Failed");
 %>
 
 <div class="container-fluid px-4 py-4" style="max-width: 900px;">
@@ -54,18 +59,25 @@ String _err = ServletUtility.getErrorMessage(request);
 					value="<%=ServletUtility.getParameter("userName", request)%>">
 					
 					
-				<input type="text" name="status"
+				 <input type="text" name="status"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by status"
-					value="<%=ServletUtility.getParameter("status", request)%>"> 
+					value="<%=ServletUtility.getParameter("status", request)%>">  
 					
-				<%-- <div class="row g-3 mb-3">
-					<div class="col-md-6">
+				<!--  static preload -->
+				
+				<%--  <div class="col-lg-4">
+					<!-- <label class="form-label fw-semibold">Status</label> -->
+						<%=HTMLUtility.getList("status", bean.getStatus(), statusMap)%>
+				</div> --%>
+				 
+				  <!-- Dynamic preload -->
+				  
+					<%-- <div class="col-lg-4">
 						<!-- <label class="form-label fw-semibold">statusList</label> -->
 						<%=HTMLUtility.getList("statusList", String.valueOf(bean.getStatus()), statusList)%>
-					</div>
-				</div> --%>
-					
+					</div> --%>
+				
 					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
