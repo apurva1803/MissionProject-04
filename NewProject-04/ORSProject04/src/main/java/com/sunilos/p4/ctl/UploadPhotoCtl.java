@@ -72,22 +72,24 @@ public class UploadPhotoCtl extends HttpServlet {
 
 			if (photoFile.exists()) {
 
+				//type of the file
 				String contentType = getServletContext().getMimeType(photoFile.getName());
 
 				if (contentType == null) {
 					contentType = "application/octet-stream";
 				}
 
-				response.setContentType(contentType);
+				response.setContentType(contentType);	//sends content type
+				
+				FileInputStream fis = new FileInputStream(photoFile);			//opens the image file to read its contents.
+				OutputStream os = response.getOutputStream();		//server to the browser.
 
-				FileInputStream fis = new FileInputStream(photoFile);
-				OutputStream os = response.getOutputStream();
-
-				byte[] buffer = new byte[4096];
+				byte[] buffer = new byte[4096];		//temporary memory
 				int bytes;
 
 				while ((bytes = fis.read(buffer)) != -1) {
-					os.write(buffer, 0, bytes);
+					os.write(buffer, 0, bytes);			//Send data to the browser
+
 				}
 
 				fis.close();
@@ -97,16 +99,16 @@ public class UploadPhotoCtl extends HttpServlet {
 		}
 
 		// If no uploaded photo exists, show the default logo from WAR
-		InputStream is = getServletContext().getResourceAsStream("/img/logo.png");
+		InputStream is = getServletContext().getResourceAsStream("/img/logo.jpg");
 
 		if (is == null) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
 			return;
 		}
 
-		response.setContentType("image/png");
+		response.setContentType("image/jpg");
 
-		OutputStream os = response.getOutputStream();
+		OutputStream os = response.getOutputStream();		//server to the browser
 
 		byte[] buffer = new byte[4096];
 		int bytes;
@@ -124,12 +126,13 @@ public class UploadPhotoCtl extends HttpServlet {
 			throws ServletException, IOException {
 
 		long id = DataUtility.getLong(request.getParameter("id"));
+		
 		UserModel model = new UserModel();
 		UserBean bean = model.findByPK(id);
 		ServletUtility.setBean(bean, request);
 		String view = request.getParameter("view");
 
-		Part part = request.getPart("photo");
+		Part part = request.getPart("photo");		//get uploaded file
 
 		if (part == null || part.getSize() == 0) {
 			ServletUtility.setErrorMessage("Photo is required", request);
@@ -140,7 +143,7 @@ public class UploadPhotoCtl extends HttpServlet {
 		System.out.println("part ==== : " + part.getName());
 
 		// Original file name
-		String fileName = part.getSubmittedFileName(); // get original file name
+		String fileName = part.getSubmittedFileName(); 	// get original file name
 
 		// Folder path from system.properties
 		String basePath = PropertyReader.getValue("photoPath");
@@ -155,9 +158,9 @@ public class UploadPhotoCtl extends HttpServlet {
 
 		File destFile = new File(folder, fileName);
 
-		// Save file
+		// Reads the uploaded file from the browser
 		InputStream input = part.getInputStream();
-		FileOutputStream output = new FileOutputStream(destFile);
+		FileOutputStream output = new FileOutputStream(destFile);			//uploaded file to the destination on server.
 
 		byte[] buffer = new byte[4096];
 		int bytesRead;
@@ -176,7 +179,7 @@ public class UploadPhotoCtl extends HttpServlet {
 
 			System.out.println("image successfully uploaded");
 
-			HttpSession session = request.getSession(false);
+			HttpSession session = request.getSession(false);		//Gets existing session.
 
 			if (session != null) {
 				UserBean user = (UserBean) session.getAttribute("user");

@@ -2,16 +2,25 @@
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
+<%@page import="com.sunilos.p4.util.HTMLUtility"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="java.util.Iterator"%>
 
+<jsp:useBean id="bean" class="com.sunilos.p4.bean.FaceRecognitionBean"
+	scope="request"></jsp:useBean>
 <%
+List statusList = (List) request.getAttribute("statusList");
 int pageNo = ServletUtility.getPageNo(request);
 int pageSize = ServletUtility.getPageSize(request);
 int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
 Iterator<FaceRecognitionBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
+
+HashMap statusMap = new HashMap();
+statusMap.put("Successful", "Successful");
+statusMap.put("Failed", "Failed");
 %>
 
 <div class="container-fluid px-4 py-4" style="max-width: 900px;">
@@ -50,13 +59,25 @@ String _err = ServletUtility.getErrorMessage(request);
 					value="<%=ServletUtility.getParameter("userName", request)%>">
 					
 					
-				<input type="text" name="status"
+				 <input type="text" name="status"
 					class="form-control form-control-sm" style="max-width: 220px;"
 					placeholder="Search by status"
-					value="<%=ServletUtility.getParameter("status", request)%>">
+					value="<%=ServletUtility.getParameter("status", request)%>">  
 					
-					
-					
+				<!--  static preload -->
+				
+				<%--  <div class="col-lg-4">
+					<!-- <label class="form-label fw-semibold">Status</label> -->
+						<%=HTMLUtility.getList("status", bean.getStatus(), statusMap)%>
+				</div> --%>
+				 
+				  <!-- Dynamic preload -->
+				  
+					<%-- <div class="col-lg-4">
+						<!-- <label class="form-label fw-semibold">statusList</label> -->
+						<%=HTMLUtility.getList("statusList", String.valueOf(bean.getStatus()), statusList)%>
+					</div> --%>
+				
 					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
@@ -96,7 +117,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					<tbody>
 						<%
 						while (it.hasNext()) {
-							FaceRecognitionBean bean = it.next();
+							bean = it.next();
 						%>
 						<tr>
 							<td><input type="checkbox" name="ids"
