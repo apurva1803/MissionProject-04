@@ -331,6 +331,22 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Face Recognition List
 						</a></li>
 						
+						<!-- Smart Parking-->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Smart Parking
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.SMARTPARKING_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Smart Parking
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.SMARTPARKING_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Smart Parking List
+						</a></li>
+						
 					</ul></li>
 
 				<!-- ---- Reports (Admin only) ---- -->
