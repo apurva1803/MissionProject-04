@@ -315,7 +315,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li>
 						
 						
-						<!-- Face Recognition -->
+					<%-- 	<!-- Face Recognition -->
 						<li><hr class="dropdown-divider border-secondary"></li>
 						
 						<li>
@@ -329,7 +329,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.FACERECOGNITION_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Face Recognition List
-						</a></li>
+						</a></li> --%>
 						
 						<!-- Smart Parking-->
 						<li><hr class="dropdown-divider border-secondary"></li>
@@ -345,6 +345,22 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.SMARTPARKING_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Smart Parking List
+						</a></li>
+						
+						<!-- Result-->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Result
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.RESULT_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Result
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.RESULT_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Result List
 						</a></li>
 						
 					</ul></li>

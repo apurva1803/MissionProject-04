@@ -60,6 +60,8 @@ public interface ORSView {
 	public String FACERECOGNITION_LIST_VIEW = PAGE_FOLDER + "/FaceRecognitionListView.jsp";
 	public String SMARTPARKING_VIEW = PAGE_FOLDER + "/SmartParkingView.jsp";
 	public String SMARTPARKING_LIST_VIEW = PAGE_FOLDER + "/SmartParkingListView.jsp";
+	public String RESULT_VIEW = PAGE_FOLDER + "/ResultView.jsp";
+	public String RESULT_LIST_VIEW = PAGE_FOLDER + "/ResultListView.jsp";
 	
 	
 	//	ctl and listctl
@@ -112,6 +114,8 @@ public interface ORSView {
 	public String FACERECOGNITION_LIST_CTL = APP_CONTEXT + "/ctl/FaceRecognitionListCtl";
 	public String SMARTPARKING_CTL = APP_CONTEXT + "/ctl/SmartParkingCtl";
 	public String SMARTPARKING_LIST_CTL = APP_CONTEXT + "/ctl/SmartParkingListCtl";
+	public String RESULT_CTL = APP_CONTEXT + "/ctl/ResultCtl";
+	public String RESULT_LIST_CTL = APP_CONTEXT + "/ctl/ResultListCtl";
 	
 	
 	//	report ctl
