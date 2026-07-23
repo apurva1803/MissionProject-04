@@ -62,6 +62,8 @@ public interface ORSView {
 	public String SMARTPARKING_LIST_VIEW = PAGE_FOLDER + "/SmartParkingListView.jsp";
 	public String RESULT_VIEW = PAGE_FOLDER + "/ResultView.jsp";
 	public String RESULT_LIST_VIEW = PAGE_FOLDER + "/ResultListView.jsp";
+	public String FEE_VIEW = PAGE_FOLDER + "/FeeView.jsp";
+	public String FEE_LIST_VIEW = PAGE_FOLDER + "/FeeListView.jsp";
 	
 	
 	//	ctl and listctl
@@ -116,6 +118,8 @@ public interface ORSView {
 	public String SMARTPARKING_LIST_CTL = APP_CONTEXT + "/ctl/SmartParkingListCtl";
 	public String RESULT_CTL = APP_CONTEXT + "/ctl/ResultCtl";
 	public String RESULT_LIST_CTL = APP_CONTEXT + "/ctl/ResultListCtl";
+	public String FEE_CTL = APP_CONTEXT + "/ctl/FeeCtl";
+	public String FEE_LIST_CTL = APP_CONTEXT + "/ctl/FeeListCtl";
 	
 	
 	//	report ctl

@@ -282,7 +282,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Voice Command List
 						</a></li> --%>
 						
-						<!-- Hostel -->
+						<%-- <!-- Hostel -->
 						<li><hr class="dropdown-divider border-secondary"></li>
 						
 						<li>
@@ -296,7 +296,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.HOSTEL_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Hostel List
-						</a></li>
+						</a></li> --%>
 						
 						<!-- Vehicle -->
 						<li><hr class="dropdown-divider border-secondary"></li>
@@ -362,6 +362,24 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.RESULT_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Result List
 						</a></li>
+						
+						<!-- Fee-->
+						<li><hr class="dropdown-divider border-secondary"></li>
+						
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-person-gear me-1"></i> Fee
+							</h6>
+						</li>
+						<li><a class="dropdown-item" href="<%=ORSView.FEE_CTL%>">
+								<i class="bi bi-person-plus me-2 text-success"></i> Add Fee
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.FEE_LIST_CTL%>"> <i
+								class="bi bi-person-lines-fill me-2 text-primary"></i> Fee List
+						</a></li>
+						
+						
 						
 					</ul></li>
 
