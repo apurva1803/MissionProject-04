@@ -65,6 +65,11 @@ public interface ORSView {
 	public String FEE_VIEW = PAGE_FOLDER + "/FeeView.jsp";
 	public String FEE_LIST_VIEW = PAGE_FOLDER + "/FeeListView.jsp";
 	
+	public String COLLEGEM_VIEW = PAGE_FOLDER + "/CollegeMView.jsp";
+	public String COLLEGEM_LIST_VIEW = PAGE_FOLDER + "/CollegeMListView.jsp";
+	public String COLLEGEM_CTL = APP_CONTEXT + "/ctl/CollegeMCtl";
+	public String COLLEGEM_LIST_CTL = APP_CONTEXT + "/ctl/CollegeMListCtl";
+	
 	
 	//	ctl and listctl
 	public String ERROR_CTL = "/ctl/MarksheetCtl";

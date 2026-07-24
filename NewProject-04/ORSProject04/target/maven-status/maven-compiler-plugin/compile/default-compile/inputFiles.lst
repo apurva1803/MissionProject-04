@@ -13,6 +13,7 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/CollegeCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/MarksheetModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/EmployeeCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ResultListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/RoleListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/SubjectBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/CourseListCtl.java
@@ -22,11 +23,14 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/RoleModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/test/Test.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/VehicleListCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/SmartParkingListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/StudentListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/VoiceCommandModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FaceRecognitionListCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/CollegeMModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/exception/DatabaseException.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/CollegeReportCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/FeeBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/HostelCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/HTMLUtility.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/UserRegistrationCtl.java
@@ -34,6 +38,7 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/RoleReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ForgetPasswordCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FaceRecognitionCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/ResultBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/HelloServlet.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FaceRecognitionReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/UserReportCtl.java
@@ -50,6 +55,7 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/StudentBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/exception/ApplicationException.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ServerCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FeeCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/test/EmailUtilityTest.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/ORSResponse.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/VehicleCtl.java
@@ -57,6 +63,7 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/SubjectReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FacultyCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/DataUtility.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ResultCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ServerListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/VehicleModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/ServerBean.java
@@ -68,11 +75,14 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ProductCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/MarksheetCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/DatabaseUtility.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/CollegeMBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/FacultyModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/StudentCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/ServerModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ORSView.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FeeListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/HostelBean.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/CollegeMCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/CourseModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/SubjectCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/SubjectModel.java
@@ -81,6 +91,7 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/UserBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/VoiceCommandListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/VoiceCommandCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/CollegeMListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/HostelListCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/FaceRecognitionBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/exception/DuplicateRecordException.java
@@ -93,11 +104,13 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/CourseBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/BaseModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/BaseCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/SmartParkingModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/RoleCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ServerReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/PerformanceMonitorFilter.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/EmailBuilder.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/EmployeeBean.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/SmartParkingBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/LoginCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/tag/MessageTag.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/BaseBean.java
@@ -106,9 +119,12 @@
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/ServletUtility.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/HostelReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/util/EmailUtility.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/SmartParkingCtl.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/FeeModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/BaseReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/bean/ProductBean.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/FrontController.java
+/Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/model/ResultModel.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/StudentReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/ProductReportCtl.java
 /Users/apurvaraut/Desktop/ProjectWorkspace/NewProject-04/ORSProject04/src/main/java/com/sunilos/p4/ctl/SubjectListCtl.java
