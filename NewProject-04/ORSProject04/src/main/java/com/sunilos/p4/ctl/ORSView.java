@@ -143,11 +143,16 @@ public interface ORSView {
 	public String HOSTEL_REPORT_CTL = APP_CONTEXT + "/ctl/HostelReportCtl";
 	public String VEHICLE_REPORT_CTL = APP_CONTEXT + "/ctl/VehicleReportCtl";
 	public String SCHOOLSTUDENT_REPORT_CTL = APP_CONTEXT + "/ctl/SchoolStudentReportCtl";
-
+	
+	public String COLLEGEM_REPORT_CTL = APP_CONTEXT + "/ctl/CollegeMReportCtl";
+	
 	//	report view
 	public String COURSE_REPORT_VIEW = "/reports/CourseListReport.jrxml";
 	public String STUDENT_REPORT_VIEW = "/reports/StudentListReport.jrxml";
 	public String COLLEGE_REPORT_VIEW = "/reports/CollegeListReport.jrxml";
+	
+	public String COLLEGEM_REPORT_VIEW = "/reports/CollegeMListReport.jrxml";
+	
 	public String USER_REPORT_VIEW = "/reports/UserListReport.jrxml";
 	public String ROLE_REPORT_VIEW = "/reports/RoleListReport.jrxml";
 	public String SUBJECT_REPORT_VIEW = "/reports/SubjectListReport.jrxml";
@@ -160,6 +165,7 @@ public interface ORSView {
 	public String SCHOOLSTUDENT_REPORT_VIEW = "/reports/SchoolStudentListReport.jrxml";
 	public String HOSTEL_REPORT_VIEW = "/reports/HostelListReport.jrxml";
 	public String VEHICLE_REPORT_VIEW = "/reports/VehicleListReport.jrxml";
+	
 	
 	
 

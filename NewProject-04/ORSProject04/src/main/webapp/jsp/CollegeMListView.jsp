@@ -4,6 +4,7 @@
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
+<%@page import="com.sunilos.p4.util.MessageSource"%>
 
 <%
 int pageNo = ServletUtility.getPageNo(request);
@@ -12,6 +13,7 @@ int index = ((pageNo - 1) * pageSize) + 1;
 List list = ServletUtility.getList(request);
 Iterator<CollegeMBean> it = list.iterator();
 String _err = ServletUtility.getErrorMessage(request);
+MessageSource ms = MessageSource.getInstance();
 %>
 
 <div class="container-fluid px-4 py-4" style="max-width: 900px;">
@@ -21,7 +23,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			class="card-header text-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
-				<i class="bi bi-cart me-2"></i> College List
+				<i class="bi bi-cart me-2"></i> <%=ms.get("college.list")%>
 			</h5>
 			<div class="d-flex gap-2">
 				<a href="#" target="_blank"
@@ -32,7 +34,7 @@ String _err = ServletUtility.getErrorMessage(request);
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
 				</a> <a href="<%=ORSView.COLLEGEM_CTL%>"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-cart me-1"></i> Add College
+					class="bi bi-cart me-1"></i> <%=ms.get("college.add")%>
 				</a>
 			</div>
 		</div>
@@ -52,13 +54,13 @@ String _err = ServletUtility.getErrorMessage(request);
 					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
-					<i class="bi bi-search me-1"></i> Search
+					<i class="bi bi-search me-1"></i><%=ms.get("button.search")%>
 				</button>
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_DELETE%>"
 					class="btn btn-danger btn-sm ms-auto"
 					>
-					<i class="bi bi-trash me-1"></i> Delete Selected
+					<i class="bi bi-trash me-1"></i> <%=ms.get("button.delete.selected")%>
 				</button>
 			</div>
 
@@ -77,12 +79,12 @@ String _err = ServletUtility.getErrorMessage(request);
 						<tr>
 							<th width="40"><input type="checkbox"
 								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
-							<th>S No.</th>
-							<th>College Name</th>
-							<th>City</th>
-							<th>University</th>
-							<th>ContactNo</th>
-							<th>Edit</th>
+							<th><%=ms.get("label.sno")%></th>
+							<th><%=ms.get("col.name")%></th>
+							<th><%=ms.get("col.city")%></th>
+							<th><%=ms.get("col.University")%></th>
+							<th><%=ms.get("col.ContactNo")%></th>
+							<th><%=ms.get("col.Edit")%></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -100,7 +102,7 @@ String _err = ServletUtility.getErrorMessage(request);
 							<td><%=bean.getContactNo()%></td>
 							<td><a href="CollegeMCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
-									class="bi bi-pencil"></i> Edit
+									class="bi bi-pencil"></i> <%=ms.get("col.Edit")%>
 							</a></td>
 						</tr>
 						<%
