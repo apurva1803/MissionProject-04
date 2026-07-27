@@ -315,7 +315,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li>
 						
 						
-					<%-- 	<!-- Face Recognition -->
+						<!-- Face Recognition -->
 						<li><hr class="dropdown-divider border-secondary"></li>
 						
 						<li>
@@ -329,7 +329,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.FACERECOGNITION_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Face Recognition List
-						</a></li> --%>
+						</a></li> 
 						
 					<%-- 	<!-- Smart Parking-->
 						<li><hr class="dropdown-divider border-secondary"></li>
@@ -347,7 +347,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Smart Parking List
 						</a></li> --%>
 						
-						<!-- Result-->
+					<%-- 	<!-- Result-->
 						<li><hr class="dropdown-divider border-secondary"></li>
 						
 						<li>
@@ -361,7 +361,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.RESULT_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Result List
-						</a></li>
+						</a></li> --%>
 						
 						<!-- Fee-->
 						<li><hr class="dropdown-divider border-secondary"></li>
@@ -474,7 +474,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 
 					</ul></li>
 					
-					<%-- <!-- ---- Use Case Reports (Admin only) ---- -->
+					 <!-- ---- Use Case Reports (Admin only) ---- -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
 					data-bs-toggle="dropdown" aria-expanded="false"> <i
@@ -491,7 +491,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								List
 						</a></li>
 						
-						<!-- Hostel -->
+					<!-- Hostel -->
 						<li><a class="dropdown-item"
 							href="<%=ORSView.HOSTEL_REPORT_CTL%>" target="_blank"> <i
 								class="bi bi-file-earmark-pdf me-2 text-warning"></i> Hostel
@@ -512,8 +512,15 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-file-earmark-pdf me-2 text-warning"></i> FaceRecognition
 								List
 						</a></li> 
+						
+						<!-- College -->
+						<li><a class="dropdown-item"
+							href="<%=ORSView.COLLEGEM_REPORT_CTL%>" target="_blank"> <i
+								class="bi bi-file-earmark-pdf me-2 text-warning"></i> College
+								List
+						</a></li> 
 					
-				</ul></li> --%>
+				</ul></li> 
 					
 			
 					

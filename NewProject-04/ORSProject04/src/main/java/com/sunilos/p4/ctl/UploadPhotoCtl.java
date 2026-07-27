@@ -42,7 +42,6 @@ public class UploadPhotoCtl extends HttpServlet {
 			request.setAttribute("roleList", l);
 		} catch (ApplicationException e) {
 		}
-
 		super.service(request, response);
 	}
 
@@ -81,14 +80,14 @@ public class UploadPhotoCtl extends HttpServlet {
 
 				response.setContentType(contentType);	//sends content type
 				
-				FileInputStream fis = new FileInputStream(photoFile);			//opens the image file to read its contents.
-				OutputStream os = response.getOutputStream();		//server to the browser.
+				FileInputStream fis = new FileInputStream(photoFile);			
+				OutputStream os = response.getOutputStream();		
 
-				byte[] buffer = new byte[4096];		//temporary memory
+				byte[] buffer = new byte[4096];		
 				int bytes;
 
 				while ((bytes = fis.read(buffer)) != -1) {
-					os.write(buffer, 0, bytes);			//Send data to the browser
+					os.write(buffer, 0, bytes);			//to browser	
 
 				}
 
@@ -98,7 +97,7 @@ public class UploadPhotoCtl extends HttpServlet {
 			}
 		}
 
-		// If no uploaded photo exists, show the default logo from WAR
+		//default img
 		InputStream is = getServletContext().getResourceAsStream("/img/logo.jpg");
 
 		if (is == null) {
@@ -108,7 +107,7 @@ public class UploadPhotoCtl extends HttpServlet {
 
 		response.setContentType("image/jpg");
 
-		OutputStream os = response.getOutputStream();		//server to the browser
+		OutputStream os = response.getOutputStream();		
 
 		byte[] buffer = new byte[4096];
 		int bytes;
@@ -143,9 +142,8 @@ public class UploadPhotoCtl extends HttpServlet {
 		System.out.println("part ==== : " + part.getName());
 
 		// Original file name
-		String fileName = part.getSubmittedFileName(); 	// get original file name
+		String fileName = part.getSubmittedFileName(); 	
 
-		// Folder path from system.properties
 		String basePath = PropertyReader.getValue("photoPath");
 
 		File folder = new File(basePath);
@@ -158,9 +156,8 @@ public class UploadPhotoCtl extends HttpServlet {
 
 		File destFile = new File(folder, fileName);
 
-		// Reads the uploaded file from the browser
 		InputStream input = part.getInputStream();
-		FileOutputStream output = new FileOutputStream(destFile);			//uploaded file to the destination on server.
+		FileOutputStream output = new FileOutputStream(destFile);			
 
 		byte[] buffer = new byte[4096];
 		int bytesRead;
@@ -174,12 +171,11 @@ public class UploadPhotoCtl extends HttpServlet {
 
 		try {
 
-			// Update photo name in database
 			model.updatePhoto(id, fileName);
 
 			System.out.println("image successfully uploaded");
 
-			HttpSession session = request.getSession(false);		//Gets existing session.
+			HttpSession session = request.getSession(false);		
 
 			if (session != null) {
 				UserBean user = (UserBean) session.getAttribute("user");
@@ -193,7 +189,6 @@ public class UploadPhotoCtl extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		// Redirect
 		if ("profile".equals(view)) {
 			response.sendRedirect("MyProfileCtl");
 		} else {

@@ -52,6 +52,7 @@ com/sunilos/p4/bean/FaceRecognitionBean.class
 com/sunilos/p4/bean/FeeBean.class
 com/sunilos/p4/ctl/SmartParkingListCtl.class
 com/sunilos/p4/ctl/HostelListCtl.class
+com/sunilos/p4/ctl/CollegeMReportCtl.class
 com/sunilos/p4/ctl/MarksheetReportCtl.class
 com/sunilos/p4/bean/ServerBean.class
 com/sunilos/p4/bean/DropdownListBean.class
