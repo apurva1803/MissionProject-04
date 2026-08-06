@@ -26,6 +26,7 @@ public class FeeListCtl extends BaseListCtl<FeeBean, FeeModel>{
 		return bean;
 	}
 	
+	
 	@Override
 	protected String getView() {
 		return ORSView.FEE_VIEW;

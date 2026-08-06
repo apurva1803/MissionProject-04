@@ -6,12 +6,10 @@ import java.util.Date;
 
 public class FeeBean extends BaseBean{
 
-	
 	private String studentId;
 	private long amount;
 	private Date paymentDate;
 	private String status;
-	
 	
 	public String getStudentId() {
 		return studentId;

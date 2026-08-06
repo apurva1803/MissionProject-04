@@ -9,6 +9,7 @@
 <jsp:useBean id="bean" class="com.sunilos.p4.bean.FeeBean"
 	scope="request"></jsp:useBean>
 
+
 <%
 String _suc = ServletUtility.getSuccessMessage(request);
 String _err = ServletUtility.getErrorMessage(request);

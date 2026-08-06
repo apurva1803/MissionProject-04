@@ -12,9 +12,10 @@ import com.sunilos.p4.util.JDBCDataSource;
 public class FeeModel extends BaseModel<FeeBean>{
 
 	private FeeBean findBystudentId(String studentId) {
-		return findByUniqueColumn("STUDENT_ID", studentId);
+		return findByUniqueColumn("studentId", studentId);
 	}
 	
+	//Add
 	@Override
 	public long add(FeeBean bean) throws ApplicationException, DuplicateRecordException {
 		Connection conn = null;
@@ -79,7 +80,7 @@ public class FeeModel extends BaseModel<FeeBean>{
 			conn = JDBCDataSource.getConnection();
 			
 			conn.setAutoCommit(false); // Begin transaction
-			PreparedStatement pstmt = conn.prepareStatement("UPDATE " + getTable() + " SET  STUDENT_ID=?,AMOUNT=?, PAYMENT_DATE=?, STATUS=?, CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?" );
+			PreparedStatement pstmt = conn.prepareStatement("UPDATE " + getTable() + " SET  studentId=?,amount=?, paymentDate=?, status=?, createdBy=?,modifiedBy=?,createdDatetime=?,modifiedDatetime=? WHERE id=?" );
 			
 			pstmt.setString(1, bean.getStudentId());
 			pstmt.setLong(2, bean.getAmount());
@@ -120,10 +121,10 @@ public class FeeModel extends BaseModel<FeeBean>{
 				sql.append(" AND id = " + bean.getId());
 			}
 			if (bean.getStudentId() != null && bean.getStudentId().length() > 0) {
-				sql.append(" AND STUDENT_ID like '" + bean.getStudentId() + "%'");
+				sql.append(" AND studentId like '" + bean.getStudentId() + "%'");
 			}
 			if (bean.getStatus() != null && bean.getStatus().length() > 0) {
-				sql.append(" AND STATUS like '" + bean.getStatus() + "%'");
+				sql.append(" AND status like '" + bean.getStatus() + "%'");
 			}
 		}
 

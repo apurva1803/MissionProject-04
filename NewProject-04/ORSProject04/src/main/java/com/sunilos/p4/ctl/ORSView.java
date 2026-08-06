@@ -167,6 +167,10 @@ public interface ORSView {
 	public String VEHICLE_REPORT_VIEW = "/reports/VehicleListReport.jrxml";
 	
 	
+	public String FEE_REPORT_CTL = APP_CONTEXT + "/ctl/FeeReportCtl";
+	public String FEE_REPORT_VIEW = "/reports/FeeListReport.jrxml";
+	
+	
 	
 
 	

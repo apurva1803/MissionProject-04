@@ -75,5 +75,6 @@ public class FeeCtl extends BaseCtl<FeeBean, FeeModel>{
 	protected FeeModel getModel() {
 		return new FeeModel();
 	}
+	
 
 }
