@@ -79,6 +79,7 @@ com/sunilos/p4/util/ServletUtility.class
 com/sunilos/p4/util/EmailBuilder.class
 com/sunilos/p4/ctl/MarksheetCtl.class
 com/sunilos/p4/ctl/BaseReportCtl.class
+com/sunilos/p4/ctl/FeeReportCtl.class
 com/sunilos/p4/ctl/VehicleListCtl.class
 com/sunilos/p4/ctl/ResultListCtl.class
 com/sunilos/p4/ctl/ORSView.class

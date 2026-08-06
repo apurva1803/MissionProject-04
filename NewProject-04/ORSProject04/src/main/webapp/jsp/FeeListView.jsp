@@ -25,10 +25,10 @@ String _err = ServletUtility.getErrorMessage(request);
 				<i class="bi bi-cart me-2"></i> Fee List
 			</h5>
 			<div class="d-flex gap-2">
-				<a href="#" target="_blank"
+				<a href="<%=ORSView.FEE_REPORT_CTL%>" target="_blank"
 					class="btn btn-sm btn-warning fw-semibold"> <i
 					class="bi bi-file-earmark-pdf me-1"></i> Print PDF
-				</a> <a href="#?type=doc" target="_blank"
+				</a>  <a href="<%=ORSView.FEE_REPORT_CTL%>?type=doc" target="_blank"
 					class="btn btn-sm btn-info fw-semibold"> <i
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
 				</a> <a href="<%=ORSView.FEE_CTL%>"
