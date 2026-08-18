@@ -126,7 +126,6 @@ public interface ORSView {
 	public String FEE_CTL = APP_CONTEXT + "/ctl/FeeCtl";
 	public String FEE_LIST_CTL = APP_CONTEXT + "/ctl/FeeListCtl";
 	
-	
 	//	report ctl
 	public String STUDENT_REPORT_CTL = APP_CONTEXT + "/ctl/StudentReportCtl";
 	public String COLLEGE_REPORT_CTL = APP_CONTEXT + "/ctl/CollegeReportCtl";

@@ -6,6 +6,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.sunilos.p4.bean.FeeBean"%>
 
+
 <jsp:useBean id="bean" class="com.sunilos.p4.bean.FeeBean"
 	scope="request"></jsp:useBean>
 
@@ -124,7 +125,6 @@ String _err = ServletUtility.getErrorMessage(request);
 					%>
 
 				</div>
-				
 				
 			</form>
 		</div>

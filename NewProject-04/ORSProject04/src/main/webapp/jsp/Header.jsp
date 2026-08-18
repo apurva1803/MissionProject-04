@@ -396,7 +396,6 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li>
 						
 						
-						
 					</ul></li>
 
 				<!-- ---- Reports (Admin only) ---- -->

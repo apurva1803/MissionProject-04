@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @WebServlet("/ctl/FeeCtl")
 public class FeeCtl extends BaseCtl<FeeBean, FeeModel>{
 
+	
 	@Override
 	protected boolean validate(HttpServletRequest request) {
 

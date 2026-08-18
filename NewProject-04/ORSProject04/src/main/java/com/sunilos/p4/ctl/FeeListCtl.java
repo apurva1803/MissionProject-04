@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @WebServlet("/ctl/FeeListCtl")
 public class FeeListCtl extends BaseListCtl<FeeBean, FeeModel>{
 
+	
 	@Override
 	protected FeeBean populateBean(HttpServletRequest request) {
 

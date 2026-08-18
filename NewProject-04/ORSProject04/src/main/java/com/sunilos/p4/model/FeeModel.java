@@ -9,6 +9,7 @@ import com.sunilos.p4.exception.ApplicationException;
 import com.sunilos.p4.exception.DuplicateRecordException;
 import com.sunilos.p4.util.JDBCDataSource;
 
+
 public class FeeModel extends BaseModel<FeeBean>{
 
 	private FeeBean findBystudentId(String studentId) {
